@@ -6,8 +6,8 @@ const research = [
   {
     number: "01",
     title: "Selective resource recovery",
-    text: "Designing materials and interfacial processes that separate critical minerals from complex industrial waters—with selectivity built in from the start.",
-    tags: ["Rare earth elements", "Critical minerals", "Industrial wastewater"],
+    text: "Engineering ligand-functionalized metal-organic frameworks and ion-exchange membranes to recover rare earth elements and lithium from complex brines.",
+    tags: ["Rare earth elements", "Lithium", "MOFs & electrodialysis"],
   },
   {
     number: "02",
@@ -32,14 +32,28 @@ const publications = [
     href: "https://doi.org/10.1038/s41467-024-55176-z",
   },
   {
+    year: "2025",
+    journal: "Nature Communications",
+    title: "A rationally designed scalable thin film nanocomposite cation exchange membrane for precise lithium extraction",
+    note: "Next-generation selective electrodialysis",
+    href: scholar,
+  },
+  {
+    year: "2025",
+    journal: "Chemical Society Reviews",
+    title: "Reactive carbon capture using saline water: evaluation of prospective sources, processes, and products",
+    note: "Saline water as a carbon-management resource",
+    href: scholar,
+  },
+  {
     year: "2024",
     journal: "ACS Sustainable Chemistry & Engineering",
     title: "ZeroCAL: Eliminating carbon dioxide emissions from limestone’s decomposition to decarbonize cement production",
-    note: "Carbon-negative materials processing",
+    note: "Low-carbon materials processing",
     href: "https://doi.org/10.1021/acssuschemeng.4c03193",
   },
   {
-    year: "2022",
+    year: "2023",
     journal: "Environmental Science & Technology",
     title: "Multistage surface-heated vacuum membrane distillation process enables high water recovery and excellent heat utilization",
     note: "Heat-efficient hypersaline desalination",
@@ -72,6 +86,7 @@ export default function Home() {
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#about">About</a>
+          <a href="/Yiming-Liu-CV.pdf" target="_blank">CV</a>
           <a href="#connect">Connect</a>
         </nav>
         <a className="header-cta" href="mailto:yimingliu@rice.edu">Let’s talk <span>↗</span></a>
@@ -85,6 +100,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button primary" href="#research">Explore the research <span>↓</span></a>
             <a className="button text-link" href={scholar} target="_blank" rel="noreferrer">View publications <span>↗</span></a>
+            <a className="button text-link" href="/Yiming-Liu-CV.pdf" target="_blank">Download CV <span>↓</span></a>
           </div>
         </div>
 
@@ -148,8 +164,8 @@ export default function Home() {
           <blockquote>“The best environmental technologies don’t just remove a problem—they recover value and redesign the system around it.”</blockquote>
         </div>
         <div className="about-copy">
-          <p>Yiming Liu is an environmental engineer and interfacial scientist working at the intersection of water, materials, and electrochemical process engineering. As a Rice Academy Postdoctoral Fellow in Professor Qilin Li’s group, he develops selective approaches to recover rare earth elements from industrial wastewater.</p>
-          <p>He earned his Ph.D. and M.S. in Civil and Environmental Engineering from UCLA and his B.S. in Environmental Engineering from Tsinghua University. His doctoral work advanced membrane distillation, heat transfer, and scale control for sustainable brine management.</p>
+          <p>Yiming Liu is an environmental engineer and interfacial scientist working across water, critical-mineral, and energy circularity. As a Rice Academy Postdoctoral Fellow advised by Professor Qilin Li and mentored by Professor Pedro J. J. Alvarez, he develops selective electrodialysis for lithium extraction and ligand-functionalized metal-organic frameworks for rare earth recovery.</p>
+          <p>He earned his Ph.D. and M.S. in Civil and Environmental Engineering from UCLA and his B.E. in Environmental Engineering from Tsinghua University. His doctoral work combined membrane process engineering, heat and mass transfer, electrochemistry, and water chemistry to advance sustainable brine management.</p>
           <div className="education">
             <div><span>2023</span><strong>Ph.D., Civil & Environmental Engineering</strong><small>University of California, Los Angeles</small></div>
             <div><span>2019</span><strong>M.S., Civil & Environmental Engineering</strong><small>University of California, Los Angeles</small></div>
@@ -164,11 +180,28 @@ export default function Home() {
           <h2>Ideas backed<br />by momentum.</h2>
         </div>
         <div className="awards">
+          <div><span>2026</span><strong>Founding President Best Paper Award</strong><small>Chinese-American Professors in Environmental Engineering and Science</small></div>
+          <div><span>2025</span><strong>Outstanding Oral Presentation Award</strong><small>19th Chinese Environmental Conference</small></div>
           <div><span>2023</span><strong>Rice Academy Postdoctoral Fellowship</strong><small>Rice University</small></div>
           <div><span>2023</span><strong>University Fellowship</strong><small>UCLA</small></div>
           <div><span>2021</span><strong>2nd Place, Internet of Water De Nora Idea Challenge</strong><small>Water innovation competition</small></div>
           <div><span>2017–18</span><strong>Academic Excellence Award</strong><small>Tsinghua University</small></div>
         </div>
+      </section>
+
+      <section className="section academic-life-section">
+        <article>
+          <p className="eyebrow"><span /> Teaching & mentoring</p>
+          <h2>Growing the next<br />generation of researchers.</h2>
+          <p>Guest lecturer at Rice University and UCLA, with research mentoring experience spanning Ph.D., master’s, undergraduate, and high-school researchers in environmental engineering, chemistry, biology, and chemical engineering.</p>
+          <div className="metric-row"><strong>7</strong><span>research mentees<br />across Rice & UCLA</span></div>
+        </article>
+        <article>
+          <p className="eyebrow"><span /> Service & leadership</p>
+          <h2>Science is a<br />shared enterprise.</h2>
+          <p>Early-career professionals’ chair for the International Water Association Nano & Water Specialist Group, conference organizer and session co-chair, grant reviewer, poster judge, and technical adviser to a clean-technology startup.</p>
+          <div className="metric-row"><strong>5+</strong><span>professional societies<br />and service communities</span></div>
+        </article>
       </section>
 
       <section className="connect-section" id="connect">
@@ -180,6 +213,7 @@ export default function Home() {
         </div>
         <div className="connect-links">
           {links.map(([label, href]) => <a key={label} href={href} target="_blank" rel="noreferrer"><span>{label}</span><b>↗</b></a>)}
+          <a href="/Yiming-Liu-CV.pdf" target="_blank"><span>Curriculum vitae</span><b>↓</b></a>
           <a href="mailto:yimingliu@rice.edu"><span>Email</span><b>↗</b></a>
         </div>
       </section>

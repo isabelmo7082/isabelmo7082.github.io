@@ -33,7 +33,7 @@ h1, h2, blockquote { font-family: Georgia, 'Times New Roman', serif; font-weight
 h1 { margin: 0; font-size: clamp(56px, 6.1vw, 96px); line-height: .96; }
 h1 em, h2 em { color: var(--blue); font-weight: 400; }
 .hero-deck { max-width: 660px; margin: 30px 0 0; color: #425367; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.65; }
-.hero-actions { margin-top: 36px; display: flex; align-items: center; gap: 18px; }
+.hero-actions { margin-top: 36px; display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 52px; padding: 0 21px; font-weight: 800; font-size: 13px; transition: transform .2s ease, background .2s ease; }
 .button:hover { transform: translateY(-2px); }
 .button.primary { color: white; background: var(--blue); }
@@ -101,6 +101,15 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 .awards strong { font-family: Georgia, serif; font-size: 21px; font-weight: 400; }
 .awards small { color: #667383; }
 
+.academic-life-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 0; background: var(--line); }
+.academic-life-section article { min-height: 620px; padding: clamp(70px, 8vw, 120px) clamp(24px, 7vw, 110px); background: var(--white); display: flex; flex-direction: column; }
+.academic-life-section article:nth-child(2) { background: #e5eee9; }
+.academic-life-section h2 { font-size: clamp(42px, 4.5vw, 68px); }
+.academic-life-section article > p:not(.eyebrow) { max-width: 590px; margin: 34px 0 0; color: #526276; line-height: 1.75; }
+.metric-row { margin-top: auto; padding-top: 35px; border-top: 1px solid var(--line); display: flex; align-items: flex-end; gap: 22px; }
+.metric-row strong { font-family: Georgia, serif; font-size: 62px; line-height: .8; font-weight: 400; color: var(--blue); }
+.metric-row span { color: #657384; font-size: 11px; line-height: 1.45; text-transform: uppercase; letter-spacing: .1em; }
+
 .connect-section { padding: clamp(90px, 11vw, 160px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 1.2fr .75fr; gap: 100px; color: var(--white); background: var(--blue); }
 .connect-copy h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(58px, 7vw, 104px); line-height: .96; letter-spacing: -.055em; font-weight: 400; }
 .connect-copy h2 em { color: #b9eee3; }
@@ -124,7 +133,8 @@ footer p { color: #667383; }
   .research-card { min-height: 350px; border-right: 0; border-bottom: 1px solid var(--line); }
   .research-card:last-child { border-bottom: 0; }
   .research-card h3 { margin-top: 40px; }
-  .about-section, .recognition-section, .connect-section { grid-template-columns: 1fr; gap: 70px; }
+  .about-section, .recognition-section, .connect-section, .academic-life-section { grid-template-columns: 1fr; gap: 70px; }
+  .academic-life-section { gap: 1px; }
 }
 
 @media (max-width: 650px) {
