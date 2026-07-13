@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const navigation = [
+  ["Home", "/"],
   ["Research", "/research/"],
   ["Publications", "/publications/"],
   ["About", "/about/"],
@@ -8,17 +9,17 @@ const navigation = [
   ["Connect", "/connect/"],
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
-    <header className="site-header">
+    <header className={`site-header${overlay ? " site-header-overlay" : ""}`}>
       <Link className="brand" href="/" aria-label="Yiming Liu, home">
         <span className="brand-mark">YL</span>
-        <span>Yiming Liu</span>
+        <span className="brand-copy"><strong>Yiming Liu Research Group</strong><small>Interfacial Science · Circular Water Systems</small></span>
       </Link>
       <nav className="main-nav" aria-label="Main navigation">
         {navigation.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>
-      <a className="header-cta" href="mailto:yimingliu@rice.edu">Let’s talk <span>↗</span></a>
+      <a className="header-cta" href="mailto:yimingliu@rice.edu">Contact</a>
     </header>
   );
 }

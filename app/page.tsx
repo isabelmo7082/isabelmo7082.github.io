@@ -2,58 +2,58 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./site-shell";
 
-const destinations = [
-  ["01", "Research", "Discover the questions, materials, and processes shaping circular water systems.", "/research/"],
-  ["02", "Publications", "Explore selected peer-reviewed work across water, materials, energy, and circularity.", "/publications/"],
-  ["03", "About", "Learn about Yiming’s background, recognition, teaching, mentoring, and service.", "/about/"],
-  ["04", "Curriculum vitae", "View or download a detailed record of research, education, awards, and leadership.", "/cv/"],
-  ["05", "Connect", "Start a conversation about research, collaboration, mentoring, or future opportunities.", "/connect/"],
+const news = [
+  ["2026", "Founding President Best Paper Award", "Chinese-American Professors in Environmental Engineering and Science"],
+  ["2025", "Outstanding Oral Presentation Award", "19th Chinese Environmental Conference"],
+  ["2025", "New work in Nature Communications", "Electrical control of CaCO₃ nucleation and crystal growth"],
 ];
 
 export default function Home() {
   return (
     <main>
-      <SiteHeader />
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow"><span /> Environmental engineer · Interfacial scientist</p>
-          <h1>Building circular<br />water systems<br /><em>from the interface up.</em></h1>
-          <p className="hero-deck">I develop materials and processes that make selective resource recovery, high-recovery desalination, and sustainable chemical production possible.</p>
-          <div className="hero-actions">
-            <Link className="button primary" href="/research/">Explore the research <span>→</span></Link>
-            <Link className="button text-link" href="/publications/">View publications <span>→</span></Link>
-            <Link className="button text-link" href="/cv/">View CV <span>→</span></Link>
-          </div>
+      <div className="home-masthead">
+        <SiteHeader overlay />
+        <Image className="masthead-photo" src="/yiming-liu.png" alt="Yiming Liu in a natural landscape" fill priority sizes="100vw" />
+        <div className="masthead-wash" />
+        <div className="masthead-content">
+          <p>Yiming Liu Research Group</p>
+          <h1>Interfacial science for<br />circular water systems</h1>
+          <div className="masthead-rule" />
+          <span>Water · Materials · Energy · Circularity</span>
         </div>
-        <div className="hero-visual">
-          <div className="photo-frame">
-            <Image src="/yiming-liu.png" alt="Yiming Liu outdoors in spring" fill priority sizes="(max-width: 800px) 90vw, 38vw" />
-          </div>
-          <div className="status-card">
-            <span className="pulse" />
-            <div><strong>Rice Academy Postdoctoral Fellow</strong><small>Rice University · Houston, Texas</small></div>
-          </div>
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
+        <a className="scroll-cue" href="#welcome" aria-label="Scroll to introduction">↓</a>
+      </div>
+
+      <section className="lab-welcome" id="welcome">
+        <div className="section-label">Welcome</div>
+        <div>
+          <h2>About our research</h2>
+          <p className="lead">We work at the intersection of environmental engineering, interfacial science, and materials design to advance selective separations and circular water systems.</p>
+          <p>Our research seeks to understand and control the moments where matter meets water. By connecting molecular-scale mechanisms with membrane, electrochemical, and thermal processes, we develop technologies for critical-mineral recovery, high-recovery desalination, and sustainable chemical production.</p>
+          <Link className="lab-link" href="/research/">Explore our research <span>→</span></Link>
         </div>
       </section>
 
-      <section className="signal-strip" aria-label="Research focus">
-        <span>Water</span><i>×</i><span>Materials</span><i>×</i><span>Energy</span><i>×</i><span>Circularity</span>
+      <section className="lab-focus">
+        <div className="focus-heading"><span>Research directions</span><h2>Science designed<br />for circularity.</h2></div>
+        <div className="focus-grid">
+          <Link href="/research/"><span>01</span><h3>Selective resource recovery</h3><p>Recovering lithium and rare earth elements from complex water streams using selective membranes and functional materials.</p></Link>
+          <Link href="/research/"><span>02</span><h3>Water–material interfaces</h3><p>Controlling nucleation, scaling, and molecular transport at membranes, electrodes, and heat-transfer surfaces.</p></Link>
+          <Link href="/research/"><span>03</span><h3>Circular brine systems</h3><p>Transforming hypersaline water into a source of water, energy, and materials through efficient process design.</p></Link>
+        </div>
       </section>
 
-      <section className="section portal-section">
-        <div className="portal-heading">
-          <p className="eyebrow"><span /> Explore the site</p>
-          <h2>One research program.<br />Five ways in.</h2>
+      <section className="lab-news">
+        <div className="news-heading"><div><span>Latest</span><h2>News & highlights</h2></div><Link href="/about/">About Yiming →</Link></div>
+        <div className="news-list">
+          {news.map(([year, title, detail]) => <article key={title}><time>{year}</time><div><h3>{title}</h3><p>{detail}</p></div></article>)}
         </div>
-        <div className="portal-list">
-          {destinations.map(([number, title, text, href]) => (
-            <Link className="portal-row" href={href} key={href}>
-              <span>{number}</span><h3>{title}</h3><p>{text}</p><b>↗</b>
-            </Link>
-          ))}
-        </div>
+      </section>
+
+      <section className="lab-join">
+        <div><span>Collaboration</span><h2>Interested in working together?</h2></div>
+        <p>I welcome conversations with researchers, students, and partners working on water–material interfaces, selective separations, and circular resource systems.</p>
+        <Link href="/connect/">Connect with us <span>→</span></Link>
       </section>
       <SiteFooter />
     </main>
